@@ -10,26 +10,50 @@
 </head>
 <body>
 
-  <header>
+  <header class="site-header">
     <nav>
       <a href="/" class="logo">Entrümpler Erfurt</a>
       <ul>
         <li><a href="/">Startseite</a></li>
+        <li><a href="../index.html#leistungen">Leistungen</a></li>
         <li><a href="/blog/">Blog</a></li>
+        <li><a href="../kontakt.html">Kontakt</a></li>
       </ul>
+      <a href="tel:{{TELEFON}}" class="nav-cta">Jetzt anrufen</a>
+      <button class="nav-toggle" aria-label="Menü öffnen">&#9776;</button>
     </nav>
   </header>
 
   <main>
-    <h1>Blog</h1>
-    <p>Hier erscheinen bald Beiträge rund um Entrümpelung, Haushaltsauflösung und mehr.</p>
+    <section class="section">
+      <h1 class="section-title">Blog</h1>
+      <p class="section-subtitle">Tipps und Infos rund um Entrümpelung, Haushaltsauflösung und mehr.</p>
 
-    <!-- Blogbeiträge werden hier als <article> ergänzt -->
+      <!-- Blogbeiträge werden hier als <article> ergänzt -->
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Entrümpler Erfurt. Alle Rechte vorbehalten.</p>
-    <p><a href="/datenschutz/">Datenschutz</a> · <a href="/impressum/">Impressum</a> · <a href="#" id="cb-revoke">Cookie-Einstellungen</a></p>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Entrümpler Erfurt</h4>
+        <p>Ihr zuverlässiger Partner für Entrümpelung und Haushaltsauflösung in Erfurt und Umgebung.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <p>Telefon: <a href="tel:{{TELEFON}}">{{TELEFON_ANZEIGE}}</a></p>
+        <p>E-Mail: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <p><a href="../datenschutz.html">Datenschutzerklärung</a></p>
+        <p><a href="../impressum.html">Impressum</a></p>
+        <p><a href="#" id="cb-revoke">Cookie-Einstellungen</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Entrümpler Erfurt. Alle Rechte vorbehalten.</p>
+    </div>
   </footer>
 
   <script src="../js/cookie-consent.js"></script>
