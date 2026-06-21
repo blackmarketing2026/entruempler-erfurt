@@ -1,0 +1,256 @@
+/* === Reset & Basis === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* === Layout === */
+header, main, footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* === Hero === */
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Footer === */
+footer {
+  border-top: 1px solid #eee;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #999;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #333;
+}
+
+/* === Cookie Banner === */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+  border-top: 2px solid #222;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+#cookie-banner[aria-hidden="true"] {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.cb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+.cb-inner h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cb-text p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.cb-text a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.cb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cb-btn {
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #222;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cb-btn-accept {
+  background: #222;
+  color: #fff;
+}
+
+.cb-btn-accept:hover {
+  background: #444;
+}
+
+.cb-btn-reject {
+  background: #fff;
+  color: #222;
+}
+
+.cb-btn-reject:hover {
+  background: #f5f5f5;
+}
+
+.cb-btn-settings {
+  background: transparent;
+  color: #222;
+  border-color: transparent;
+  text-decoration: underline;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.cb-btn-settings:hover {
+  color: #000;
+}
+
+.cb-btn-save {
+  background: #222;
+  color: #fff;
+}
+
+.cb-btn-save:hover {
+  background: #444;
+}
+
+/* === Cookie Settings Detail === */
+#cb-settings {
+  border-top: 1px solid #eee;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.cb-categories {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cb-category {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.cb-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.cb-category-header input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #222;
+}
+
+.cb-required {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 400;
+}
+
+.cb-category-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.4rem;
+}
+
+.cb-category-meta {
+  font-size: 0.78rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* === Cookie Banner Responsive === */
+@media (max-width: 600px) {
+  .cb-inner {
+    padding: 1rem;
+  }
+
+  .cb-actions {
+    flex-direction: column;
+  }
+
+  .cb-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cb-btn-settings {
+    text-align: left;
+  }
+}
