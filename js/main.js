@@ -130,6 +130,38 @@
     });
   }
 
+  // === Blog-Sortierung ===
+  var blogList = document.getElementById("blog-list");
+  var blogSort = document.getElementById("blog-sort-select");
+  var blogCount = document.getElementById("blog-count");
+
+  if (blogList && blogSort) {
+    function sortBlog(order) {
+      var cards = Array.prototype.slice.call(blogList.querySelectorAll(".blog-card"));
+      cards.sort(function (a, b) {
+        var dateA = a.getAttribute("data-date");
+        var dateB = b.getAttribute("data-date");
+        return order === "newest"
+          ? dateB.localeCompare(dateA)
+          : dateA.localeCompare(dateB);
+      });
+      cards.forEach(function (card) {
+        blogList.appendChild(card);
+      });
+    }
+
+    if (blogCount) {
+      var total = blogList.querySelectorAll(".blog-card").length;
+      blogCount.textContent = total + (total === 1 ? " Beitrag" : " Beiträge");
+    }
+
+    blogSort.addEventListener("change", function () {
+      sortBlog(this.value);
+    });
+
+    sortBlog("newest");
+  }
+
   // === Smooth Scroll für Sticky CTA ===
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
